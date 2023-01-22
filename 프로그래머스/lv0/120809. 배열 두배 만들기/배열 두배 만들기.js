@@ -1,3 +1,3 @@
 function solution(numbers) {
-    return numbers.reduce((acc, curr) => [...acc, curr * 2], []);
+    return numbers.map(num => num * 2);
 }
