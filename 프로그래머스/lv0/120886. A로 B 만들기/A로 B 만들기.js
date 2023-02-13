@@ -1,12 +1,6 @@
 function solution(before, after) {
-    const a = before.split('').sort();
-    const b = after.split('').sort();
+    const a = before.split('').sort().join('');
+    const b = after.split('').sort().join('');
     
-    for(let i = 0; i < a.length; i++) {
-        if(a[i] !== b[i]) {
-            return 0;
-        }
-    }
-    
-    return 1;
+    return a === b ? 1 : 0;
 }
