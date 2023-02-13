@@ -1,11 +1,13 @@
 function solution(i, j, k) {
-    let count = 0;
+    let result = '';
+    
     const regexp = new RegExp(k, 'g');
-    for(let start = i; start <= j; start++) {
-        const match = String(start).match(regexp);
-        if(match){
-            count += Number(match.length);
-        }
+    
+    for(i; i <= j; i++) {
+       result += i;    
     }
-    return count;
+    
+    const matchNum = result.match(regexp);
+    
+    return  matchNum ? matchNum.length : 0;
 }
