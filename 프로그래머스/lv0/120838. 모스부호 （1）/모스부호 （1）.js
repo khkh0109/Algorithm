@@ -7,13 +7,7 @@ function solution(letter) {
     '-.--':'y','--..':'z'
     }
     
-    let result = '';
-    
     const letterSplit = letter.split(' ');
     
-    letterSplit.forEach(word => {
-        result += morse[word];
-    });
-    
-    return result;
+    return letterSplit.reduce((acc, cur) => acc += morse[cur], '');
 }
