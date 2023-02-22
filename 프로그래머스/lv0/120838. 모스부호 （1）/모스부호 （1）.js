@@ -12,9 +12,7 @@ function solution(letter) {
     const letterSplit = letter.split(' ');
     
     letterSplit.forEach(word => {
-        if(word in morse) {
-            result += morse[word];
-        }
+        result += morse[word];
     });
     
     return result;
