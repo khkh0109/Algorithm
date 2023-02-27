@@ -1,13 +1,9 @@
 function solution(num_list, n) {
     const answer = [];
-    let start = 0;
-    let end = n;
     
-    while(end <= num_list.length) {
-        const sliceArr = num_list.slice(start, end);
-        answer.push(sliceArr);
-        start += n;
-        end += n;
+    for(let i = 0; i < num_list.length; i += n) {
+        const sliceNum = num_list.slice(i, i + n);
+        answer.push(sliceNum);
     }
     
     return answer;
