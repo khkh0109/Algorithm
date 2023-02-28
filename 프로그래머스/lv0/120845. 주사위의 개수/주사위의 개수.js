@@ -1,5 +1,3 @@
 function solution(box, n) {
-    return box
-        .map(num => Math.trunc(num / n))
-        .reduce((acc, cur) => acc * cur);
+    return box.reduce((acc, cur) => acc * Math.trunc(cur / n), 1);
 }
