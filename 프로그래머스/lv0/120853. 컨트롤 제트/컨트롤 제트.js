@@ -1,13 +1,13 @@
 function solution(s) {
-    const str = s.split(' ');
-    let tmp = 0;
-    return str.reduce((acc, cur) => {
-        if(cur === 'Z') {
-            acc -= tmp;
+    const stack = [];
+    
+    s.split(' ').forEach(item => {
+        if(item === 'Z') {
+            stack.pop(item);
         } else {
-            acc += +cur;    
-            tmp = +cur;
+            stack.push(item);
         }
-        return acc;
-    }, 0);
+    });
+    
+    return stack.reduce((acc, cur) => acc + +cur, 0)
 }
