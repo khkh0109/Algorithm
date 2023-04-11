@@ -1,13 +1,3 @@
 function solution(array) {
-    let count = 0;
-    
-    array.forEach((el) => {
-        [...String(el)].forEach((el) => {
-            if(el === '7') {
-                count++;
-            }
-        });
-    });
-    
-    return count;
+    return array.join("").split("7").length - 1;
 }
