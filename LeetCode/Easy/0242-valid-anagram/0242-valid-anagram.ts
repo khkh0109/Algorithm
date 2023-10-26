@@ -3,24 +3,19 @@ function isAnagram(s: string, t: string): boolean {
         return false;
     }
     
-    const sCounter = {};
-    const tCounter = {};
+    const lookup = {};
     
-    for(const val of s) {
-        sCounter[val] = (sCounter[val] || 0) + 1;
+    for(let i = 0; i < s.length; i++) {
+        const letter = s[i];
+        lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
     }
     
-    for(const val of t) {
-        tCounter[val] = (tCounter[val] || 0) + 1;
-    }
-    
-    for(const key in sCounter) {
-        if(!(key in tCounter)) {
+    for(let i = 0; i < t.length; i++) {
+        const letter = t[i];
+        if(!(lookup[letter])) {
             return false;
-        }
-        
-        if(sCounter[key] !== tCounter[key]) {
-            return false;
+        } else {
+            lookup[letter] -= 1;
         }
     }
     
